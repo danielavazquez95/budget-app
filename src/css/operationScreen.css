@@ -1,0 +1,14 @@
+.card-operation{
+    min-width: 230px;
+    min-height:250px;
+   
+}
+
+
+.input-operation:disabled{
+    background: none;
+    border: none;
+    outline:0;
+    
+}
+

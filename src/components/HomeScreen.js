@@ -44,11 +44,10 @@ export const HomeScreen = () => {
 
         data.type === 'Entry'  ?
         setEntryData(entry) :
-        setExpenseData(expense)
+        setExpenseData(expense);
 
     };
 
- 
     return (
         <>
         {

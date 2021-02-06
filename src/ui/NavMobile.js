@@ -10,6 +10,7 @@ export const NavMobile = (props) => {
 
     const handlerClick = () => {
         setUserToken({});
+        localStorage.clear();
     };
 
     return (

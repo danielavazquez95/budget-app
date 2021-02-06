@@ -18,9 +18,6 @@ export const ListOperation = ({entryData, expenseData,  handleDeleteOperation}) 
 
     };
         
-
-    console.log('dataEntry LISTADO', entryData);
-    console.log('expenseData LISTADO', expenseData);
     return (
     <>
  

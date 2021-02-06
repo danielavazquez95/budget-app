@@ -26,6 +26,11 @@ export const OperationScreen = ({operation, handleDeleteOperation, layout}) => {
         });
    };
 
+   const handleDeleteClick = () => {
+    deleteOperation(userToken.success, operation.id);
+    handleDeleteOperation(operation);
+   }
+
     return (
 
         <div className={`${layout} p-3 card-operation `}>
@@ -44,7 +49,7 @@ export const OperationScreen = ({operation, handleDeleteOperation, layout}) => {
                     <input className="form-control input-operation" name="type" defaultValue={operation.type} disabled={true} onChange={handlerChange}/>
                 </div>
             </div>
-            <i className="delete-icon far fa-trash-alt ps-1 pb-3" onClick={() => { console.log('operation',operation); deleteOperation(userToken.success, operation.id); handleDeleteOperation(operation);}} />
+            <i className="delete-icon far fa-trash-alt ps-1 pb-3" onClick={handleDeleteClick} />
             <i className="edit-icon far fa-edit ps-2 pb-3 " onClick={handlerClick} />
            <button 
                 type="button" 

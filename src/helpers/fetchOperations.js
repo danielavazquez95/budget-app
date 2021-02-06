@@ -2,6 +2,7 @@
 export const getEntryOperations = async (token, id) => {
 
     const resp = await fetch(`https://budget-apirest.herokuapp.com/api/operations/entries/${id}`, {
+        mode: 'cors',
         headers: {'user-token': token}
     });
     const data = await resp.json();
@@ -12,6 +13,7 @@ export const getEntryOperations = async (token, id) => {
 export const getExpensesOperations = async (token, id) => {
 
     const resp = await fetch(`https://budget-apirest.herokuapp.com/api/operations/expenses/${id}`, {
+        mode: 'cors',
         headers: {'user-token': token}
     });
     const data = await resp.json();
@@ -28,18 +30,15 @@ export const postOperation = (token, data) => {
         body: JSON.stringify(data),
         headers: { 'user-token': token,'Content-Type': 'application/json' }
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
 };
 
 export const deleteOperation = (token, id) => {
-
+    console.log('id en delete', id)
     fetch(`https://budget-apirest.herokuapp.com/api/operations/${id}`, {
         method: 'DELETE',
+        mode: 'cors',
         headers: {'user-token': token} 
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
 };
 
 export const modifyOperation = (token, id, data) => {
@@ -50,8 +49,6 @@ export const modifyOperation = (token, id, data) => {
         body: JSON.stringify(data),
         headers: { 'user-token': token, 'Content-Type': 'application/json'}
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
 };
 
 export const registerUser = (data) => {
@@ -62,8 +59,6 @@ export const registerUser = (data) => {
         body: JSON.stringify(data),
         headers: { 'Content-Type': 'application/json' }
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
 
 };
 

@@ -9,6 +9,7 @@ export const RegisterOperationForm = ({handleNewOperation}) => {
   const {userToken} = useContext(Context)
 
   const initialValue = {
+    id: Math.floor(Math.random() * 100),
     concept:'',
     price: null,
     date:'',
@@ -30,6 +31,7 @@ export const RegisterOperationForm = ({handleNewOperation}) => {
     }
    
   };
+  console.log(userToken.id);
 
   return (
 

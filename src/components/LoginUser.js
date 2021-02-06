@@ -32,11 +32,9 @@ export const LoginUser = () => {
           if(data.success){
             setUserToken(data);
             localStorage.setItem('data', JSON.stringify(data));
-            console.log('Se obtuvo el token correctamente');
             setUser(initialValue);
             history.push('/');
           } else {
-             console.log('No se pudo obtener el token', data);
              Swal.fire({
               icon: 'error',
               title: 'Error',

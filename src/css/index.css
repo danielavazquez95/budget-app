@@ -1,14 +1,12 @@
 .home-screen{
   min-height: 80vh;
-
 }
 
 .form-container{
   background: #fff;
-  padding: 30px;
   box-shadow: 0px 0px 9px 0px #CBCACB;
   font-family: 'Open Sans', sans-serif;
-
+  padding: 30px;
 }
 
 .form-screen{
@@ -18,24 +16,20 @@
 .card-operation{
   min-width: 230px;
   min-height:120px;
- 
 }
-
 
 .input-operation:disabled{
   background: none;
   border: none;
   outline:0;
-  
 }
 
-.footer {
+.footer { 
+  bottom: 0;
   padding-top: 3em;
   position: relative;
-  bottom: 0;
-  width: 100%;
   font-family: 'Open Sans', sans-serif;
- 
+  width: 100%;
 }
 
 .delete-icon {
@@ -46,39 +40,33 @@
   cursor: pointer;
 }
 
-
 .nav-mobile{
-
-  height: 60px;
-  display: flex;
-  justify-content: start;
   align-items: center;
-
+  display: flex;
+  height: 60px;
+  justify-content: start;
 }
-.menu-bars{
+
+.menu-bars{ 
+  color: white;   
+  background: none;
+  font-size: 25px;
   margin-left: 10px;
   margin-right: 10px;
-  font-size: 25px;
-  color: white;
-  background: none;
-
 }
 
 .menu-bars:hover {
   color: grey;
- 
 }
 
-.nav-menu {
-  
-  width: 210px;
-  height: 100vh;
+.nav-menu {    
   display: flex;
-  justify-content: start;
-  position: fixed;
+  height: 100vh;  
+  justify-content: start; 
   top: 0;
   left: -100%;
-  
+  position: fixed;
+  width: 210px;
 }
 
 .nav-menu.active {
@@ -92,32 +80,29 @@ width: 100%;
 }
 
 .navbar-toggle {
-
-width: 100%;
-height: 80px;
-display: flex;
-margin-top: 45px;
-margin-left: 0;
-justify-content: center;
-align-items: start;
+  align-items: start;
+  display: flex;  
+  height: 80px;
+  justify-content: center;
+  margin-top: 45px;
+  margin-left: 0;
+  width: 100%;
 }
 
 .nav-text {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  padding: 8px 0px 8px 0px;
-  list-style: none;
-  height: 60px;
-  font-size: 20px;
-  text-decoration: none;
+  align-items: center; 
   color:white;
+  display: flex;
+  font-size: 20px;
+  height: 60px;    
+  justify-content: start;
+  list-style: none;
+  padding: 8px 0px 8px 0px;
+  text-decoration: none;
 }
 
 .nav-text:hover {
-
   color: grey;
   text-decoration: none;
-
 }
 

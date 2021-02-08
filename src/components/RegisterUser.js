@@ -27,7 +27,7 @@ export const RegisterUser = () => {
         setData(initialValue);
         Swal.fire({
           icon: 'success',
-          title: 'Error',
+          title: 'Success',
           text: 'Your account was successfully registered'
         })
         history.push('/auth/login');

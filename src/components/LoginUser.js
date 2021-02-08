@@ -40,7 +40,7 @@ export const LoginUser = () => {
              Swal.fire({
               icon: 'error',
               title: 'Error',
-              text: 'There was a problem creating your account. Check that your email address is spelled correctly'
+              text: 'There was a problem loging in to your account. Check that your email address and password are spelled correctly.'
             })
           }});
       }

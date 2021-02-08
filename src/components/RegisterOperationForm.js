@@ -5,8 +5,7 @@ import { postOperation } from '../helpers/fetchOperations';
 
 export const RegisterOperationForm = ({handleNewOperation}) => {
 
-
-  const {userToken} = useContext(Context)
+  const {userToken} = useContext(Context);
 
   const initialValue = {
     id: Math.floor(Math.random() * 100),
@@ -14,7 +13,7 @@ export const RegisterOperationForm = ({handleNewOperation}) => {
     price: null,
     date:'',
     type:'Click to select',
-    userId: userToken.id
+    userId: JSON.parse(localStorage.getItem('data')).id
   };
 
   const [formData, setFormData] = useState(initialValue);
@@ -30,14 +29,13 @@ export const RegisterOperationForm = ({handleNewOperation}) => {
       setFormData(initialValue);
     }
    
-  };
-  console.log(userToken.id);
+  };  
 
   return (
 
         <div className="col-lg-4 mt-5">
             <form className="form-container" ref={formRef} onSubmit={handlerSubmit}>
-              <h1 className="text-center">Add a new operation</h1>
+              <h1 className="text-center">Add new operation</h1>
               <hr/>
                   <label>Concept:</label>
                   <input 

@@ -1,11 +1,12 @@
 import React  from 'react';
 import { OperationScreen } from './OperationScreen';
 
+export const ListOperation = ({operationsData, handleDeleteOperation, loadingStatus}) => {
 
-
-export const ListOperation = ({entryData, expenseData,  handleDeleteOperation}) => {
-
-
+    const operationsList = operationsData.length < 10 ? operationsData : operationsData.slice(-10);
+    const entryData = operationsList.filter(operation => operation.type === 'Entry');
+    const expenseData = operationsList.filter(operation => operation.type === 'Expense');
+    
     const balance = () => {
 
         let a = 0;
@@ -17,43 +18,44 @@ export const ListOperation = ({entryData, expenseData,  handleDeleteOperation}) 
         return a - b
 
     };
-        
+    
+    const isNegativeNumber = () => {
+        if (balance() > 0){
+            return true
+        } else if (balance() < 0 ){
+            return false
+        }
+        return 'equal'
+    };
+
+
     return (
-    <>
- 
-    {
     
         <div className="col mt-5 mb-5"> 
             <div className="form-container" >
-                <h3 className="text-center">{`Current balance: $ ${ balance()} `}</h3>
-             
+             <h3 className='text-center'>Current balance:<span className={`text-center ${(isNegativeNumber() === 'equal') || (isNegativeNumber() ? 'text-success' : 'text-danger')}`} >{` $${ balance()}`}</span></h3>
                 <hr/> 
-                <h4 className="text-center">List operations</h4>
+                <h4 className="text-center">Operations</h4>
                 <hr/>  
-                <div className="row">
+                {loadingStatus ? <h4 className="animate__animated animate__flash d-block text-center">Loading...</h4> :
+                (<div className="row">
                     <div className="col">
                         <h4 className="text-center">Entry</h4>
-                        {    entryData.length > 0 && 
+                        { 
                             entryData.map( operation =>  <OperationScreen key={operation.id} operation={operation} handleDeleteOperation={handleDeleteOperation} layout='alert alert-primary p-1'/>)
                         }
                     </div>
                     <div className="col">
                         <h4 className="text-center">Expenses</h4>
                         {   
-                            expenseData.length > 0 && 
                             expenseData.map( operation =>  <OperationScreen key={operation.id} operation={operation} handleDeleteOperation={handleDeleteOperation} layout='alert alert-danger p-1' />)
                         }
                     </div>
-    
                 </div>
-            
+                )}
             </div>
         </div>
     
-    
-    }
-        
-    </>
-)
+    )
 };
 

@@ -1,10 +1,9 @@
 import React from 'react';
 
-
 export const Footer = () => {
 
     return (
-        
+         
         <div className="footer">
             <footer className=" bg-dark py-4">
                 <div className="container">
@@ -18,14 +17,11 @@ export const Footer = () => {
                     </div>
                     <div className="row">
                         <div className="col text-center">
-                            <a className="nav-item nav-link d-inline text-white" href="https://www.facebook.com/danielavazquez87">
-                                <i className="fab fa-facebook-square" />
+                            <a className="nav-item nav-link d-inline text-white" href="https://github.com/danielavazquez95" target="_blank">
+                                <i className="fab fa-github" />
                             </a>
-                            <a className="nav-item nav-link d-inline text-white" href="https://twitter.com/DanielaaVazquez">
-                                <i className="fab fa-twitter"/>
-                            </a>
-                            <a className="nav-item nav-link d-inline text-white" href="https://www.instagram.com/danielaavazquez">
-                                <i className="fab fa-instagram"/>
+                            <a className="nav-item nav-link d-inline text-white" href="mailto:danielavazquez95@gmail.com" target="_blank">
+                                <i className="far fa-envelope"/>
                             </a>
                         </div>  
                     </div>

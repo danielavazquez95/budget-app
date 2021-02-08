@@ -1,7 +1,7 @@
 
-export const getEntryOperations = async (token, id) => {
+export const getOperations = async (token, id) => {
 
-    const resp = await fetch(`https://budget-apirest.herokuapp.com/api/operations/entries/${id}`, {
+    const resp = await fetch(`https://budget-apirest.herokuapp.com/api/operations/${id}`, {
         mode: 'cors',
         headers: {'user-token': token}
     });
@@ -9,18 +9,6 @@ export const getEntryOperations = async (token, id) => {
     
     return data;
 };
-
-export const getExpensesOperations = async (token, id) => {
-
-    const resp = await fetch(`https://budget-apirest.herokuapp.com/api/operations/expenses/${id}`, {
-        mode: 'cors',
-        headers: {'user-token': token}
-    });
-    const data = await resp.json();
-    
-    return data;
-};
-
 
 export const postOperation = (token, data) => {
 

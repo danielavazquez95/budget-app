@@ -5,21 +5,20 @@ import {
     Route,
     Redirect
   } from "react-router-dom";
+import { NavBar } from '../ui/Navbar';
+import { AuthRouter } from './AuthRouter';
 import { HomeScreen } from '../components/HomeScreen';
 import { Footer } from '../ui/Footer';
-import { NavBar } from '../ui/Navbar';
-import '../css/index.css';
-import { AuthRouter } from './AuthRouter';
 import { Context } from '../context/Context';
+import '../css/index.css';
 
 export const AppRouter = () => {
 
     const {setUserToken} = useContext(Context);
-
+    
     useEffect(() => {
         localStorage.getItem('data') && setUserToken( JSON.parse(localStorage.getItem('data')))
     }, [])
-
 
     return (
         
@@ -34,6 +33,5 @@ export const AppRouter = () => {
             </div>
             <Footer/>
         </HashRouter>
-    
     )
 };

@@ -20,13 +20,11 @@ export const NavMobile = (props) => {
                     <i className="fas fa-bars d-md-none mx-3" onClick={showSidebar}/>
                 </div>
             </div>
-
             <nav className={sidebar ? 'nav-menu active bg-dark d-sm-block d-md-none' : 'nav-menu  bg-dark d-sm-block d-md-none'} onClick={showSidebar}>
                 <ul className="nav-menu-items" onClick={showSidebar}>
                  <li className='navbar-toggle bg-dark d-block'>
                     {
                         userToken.success ? 
-
                         <NavLink
                         activeClassName="active"
                         className="menu-bars nav-text text-danger" 
@@ -35,7 +33,6 @@ export const NavMobile = (props) => {
                         >
                         Log out
                         </NavLink>
-
                         :
                         <>
                             <NavLink 
@@ -51,7 +48,6 @@ export const NavMobile = (props) => {
                             Log in
                             </NavLink>
                         </>
-
                     }
                   </li>
                 </ul>

@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { deleteOperation, modifyOperation } from '../helpers/fetchOperations';
 import { Context } from '../context/Context';
-import '../css/operationScreen.css'
 
 
 export const OperationScreen = ({operation, handleDeleteOperation, layout}) => {
@@ -35,22 +34,22 @@ export const OperationScreen = ({operation, handleDeleteOperation, layout}) => {
 
         <div className={`${layout} p-3 card-operation `}>
             <div className="row mb-3">
-                <input className="form-control input-operation pt-2 mb-2 text-center font-weight-bold" name="concept" defaultValue={operation.concept} disabled={styleEdit} onChange={handlerChange} />
-                <label className="col-4 col-form-label text-right">Price: </label>
-                <div className="col-8">
-                    <input type="number" className="form-control input-operation" name="price" defaultValue={operation.price} disabled={styleEdit} onChange={handlerChange}/>
+                <input className="form-control input-operation pt-1 mb-2 text-center font-weight-bold" name="concept" defaultValue={operation.concept} disabled={styleEdit} onChange={handlerChange} />
+                <label className="col-4 col-form-label text-right pe-2 py-0">Price: </label>
+                <div className="col-8 d-flex">
+                   <span className="text-dark">$</span> <input type="number" className="form-control input-operation px-2 py-0" name="price" defaultValue={operation.price} disabled={styleEdit} onChange={handlerChange}/>
                 </div>
-                <label className="col-4 col-form-label text-right">Date: </label>
+                <label className="col-4 col-form-label text-right pe-2 py-0">Date: </label>
                 <div className="col-8 pt-1">
-                    <input type="date" className="form-control input-operation px-0 mx-0" name="date" defaultValue={operation.date} disabled={styleEdit} onChange={handlerChange}/>
+                    <input type="date" className="form-control input-operation px-2 py-0" name="date" defaultValue={operation.date} disabled={styleEdit} onChange={handlerChange}/>
                 </div>
-                <label className="col-4 col-form-label text-right">Type: </label>
+                <label className="col-4 col-form-label text-right pe-2 py-0">Type: </label>
                 <div className="col-8 pt-1">
-                    <input className="form-control input-operation" name="type" defaultValue={operation.type} disabled={true} onChange={handlerChange}/>
+                    <input className="form-control input-operation pe-2 py-0" name="type" defaultValue={operation.type} disabled={true} onChange={handlerChange}/>
                 </div>
             </div>
-            <i className="delete-icon far fa-trash-alt ps-1 pb-3" onClick={handleDeleteClick} />
-            <i className="edit-icon far fa-edit ps-2 pb-3 " onClick={handlerClick} />
+            <i className="delete-icon far fa-trash-alt ps-1 pb-2" onClick={handleDeleteClick} />
+            <i className="edit-icon far fa-edit ps-2 pb-2 " onClick={handlerClick} />
            <button 
                 type="button" 
                 className={`btn btn-success btn-sm ms-5 ${styleEdit && 'd-none'}`} 

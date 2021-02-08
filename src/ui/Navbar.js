@@ -7,7 +7,6 @@ export const NavBar = (props) => {
 
     const {userToken,setUserToken} = useContext(Context);
 
-
     const handlerClick = () => {
         setUserToken({});
         localStorage.clear();
@@ -15,7 +14,7 @@ export const NavBar = (props) => {
 
     return (
        
-            <div> 
+        <div> 
             <NavMobile />
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark d-none d-md-flex">
                 <div className="collapse navbar-collapse justify-content-end mx-5" id="navbarNav">
@@ -38,7 +37,7 @@ export const NavBar = (props) => {
                             activeClassName="active"
                             className="nav-item nav-link d-none d-md-inline" 
                             exact to="/auth/register" >
-                            Sign in
+                            Sign up
                         </NavLink>
                         <NavLink 
                             activeClassName="active"
@@ -49,8 +48,8 @@ export const NavBar = (props) => {
                     </ul>
                     }           
                 </div>
-              </nav>
-          </div>  
+            </nav>
+        </div>  
                
       
     )

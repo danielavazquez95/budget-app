@@ -32,7 +32,7 @@ export const OperationScreen = ({operation, handleDeleteOperation, layout}) => {
 
     return (
 
-        <div className={`${layout} p-3 card-operation `}>
+        <div className={`container ${layout} p-3 card-operation `}>
             <div className="row mb-3">
                 <input className="form-control input-operation pt-1 mb-2 text-center font-weight-bold" name="concept" defaultValue={operation.concept} disabled={styleEdit} onChange={handlerChange} />
                 <label className="col-4 col-form-label text-right pe-2 py-0">Price: </label>

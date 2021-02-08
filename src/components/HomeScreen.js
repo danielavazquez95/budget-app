@@ -38,8 +38,8 @@ export const HomeScreen = () => {
         <>
         {
              (userToken.success ||  localStorage.getItem('data') ) ? 
-             (<div className="container box justify-content-center">
-                <div className="row">
+             (<div className="container box">
+                <div className="row justify-content-center">
                     <RegisterOperationForm handleNewOperation={handleNewOperation}/>
                     <ListOperation operationsData={operationsData} handleDeleteOperation={handleDeleteOperation} loadingStatus={loadingStatus}/>
                 </div>

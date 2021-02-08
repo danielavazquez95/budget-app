@@ -40,13 +40,13 @@ export const ListOperation = ({operationsData, handleDeleteOperation, loadingSta
                 {loadingStatus ? <h4 className="animate__animated animate__flash d-block text-center">Loading...</h4> :
                 (<div className="row">
                     <div className="col">
-                        <h4 className="text-center">Entry</h4>
+                        <h4 className="text-center pb-2">Entry</h4>
                         { 
                             entryData.map( operation =>  <OperationScreen key={operation.id} operation={operation} handleDeleteOperation={handleDeleteOperation} layout='alert alert-primary p-1'/>)
                         }
                     </div>
                     <div className="col">
-                        <h4 className="text-center">Expenses</h4>
+                        <h4 className="text-center pb-2">Expenses</h4>
                         {   
                             expenseData.map( operation =>  <OperationScreen key={operation.id} operation={operation} handleDeleteOperation={handleDeleteOperation} layout='alert alert-danger p-1' />)
                         }

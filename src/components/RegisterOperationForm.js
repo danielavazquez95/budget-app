@@ -33,7 +33,7 @@ export const RegisterOperationForm = ({handleNewOperation}) => {
 
   return (
 
-        <div className="col-lg-4 mt-5">
+        <div className=" col-sm-8 col-lg-4 mt-5">
             <form className="form-container" ref={formRef} onSubmit={handlerSubmit}>
               <h1 className="text-center">Add new operation</h1>
               <hr/>

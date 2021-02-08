@@ -35,7 +35,7 @@ export const RegisterUser = () => {
     };
 
     return (
-      
+      <div className="container">
         <div className="row justify-content-center">
           <div className="col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mt-5 mb-1">
           <form className="form-container form-screen" onSubmit={handlerSubmit} >
@@ -88,6 +88,7 @@ export const RegisterUser = () => {
           </form>
           </div> 
         </div>
+      </div>
 
     )
 };

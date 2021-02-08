@@ -47,49 +47,52 @@ export const LoginUser = () => {
     };
    
     return (
-      <div className="row justify-content-center">
-        <div className="col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mt-5 mb-1">
-          <form className="form-container form-screen" onSubmit={handlerSubmit}  >
-            <h1 className="text-center">Log in to your account!</h1>
-            <hr/>
-                <label>Username:</label>
-                <input 
-                    type="text" 
-                    name="username" 
-                    className="form-control my-3" 
-                    autoComplete="off"
-                    onChange={handlerChange}
-                    />
-                <label>Email:</label>
-                <input 
-                    type="text" 
-                    name="email"
-                    className="form-control my-3" 
-                    autoComplete="off"
-                    onChange={handlerChange}
-                  />
-                <label>Password:</label>
-                <input 
-                    type="password" 
-                    name="password"
-                    className="form-control my-3" 
-                    autoComplete="off"
-                    onChange={handlerChange}
-                  />
-
-                <div className="d-grid gap-2">
-                  <button 
-                      type="submit"
-                      className="btn btn-success btn-block my-3"
+      
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4 mt-5 mb-1 ">
+            <form className="form-container form-screen" onSubmit={handlerSubmit}  >
+              <h1 className="text-center">Log in to your account!</h1>
+              <hr/>
+                  <label>Username:</label>
+                  <input 
+                      type="text" 
+                      name="username" 
+                      className="form-control my-3" 
                       autoComplete="off"
-                    >
-                          Log in
-                  </button>
-                  <hr/>
-                  <Link className="text-center" to="/auth/register"> Don't have an account? Sign up </Link> 
-              </div>
-        </form>
+                      onChange={handlerChange}
+                      />
+                  <label>Email:</label>
+                  <input 
+                      type="text" 
+                      name="email"
+                      className="form-control my-3" 
+                      autoComplete="off"
+                      onChange={handlerChange}
+                    />
+                  <label>Password:</label>
+                  <input 
+                      type="password" 
+                      name="password"
+                      className="form-control my-3" 
+                      autoComplete="off"
+                      onChange={handlerChange}
+                    />
+
+                  <div className="d-grid gap-2">
+                    <button 
+                        type="submit"
+                        className="btn btn-success btn-block my-3"
+                        autoComplete="off"
+                      >
+                            Log in
+                    </button>
+                    <hr/>
+                    <Link className="text-center" to="/auth/register"> Don't have an account? Sign up </Link> 
+                </div>
+          </form>
+          </div> 
+        </div>
       </div> 
-     </div> 
     )
 }

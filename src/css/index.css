@@ -1,5 +1,6 @@
+
 .home-screen{
-  min-height: 80vh;
+  min-height: 84vh;
 }
 
 .form-container{
@@ -9,13 +10,10 @@
   padding: 30px;
 }
 
-.form-screen{
-  max-width: 452px;
-}
-
 .card-operation{
-  min-width: 230px;
+  min-width: 235px;
   min-height:120px;
+  max-width: 360px;
 }
 
 .input-operation:disabled{
@@ -28,7 +26,8 @@
   bottom: 0;
   padding-top: 3em;
   position: relative;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;  
+  height: 15vh;
   width: 100%;
 }
 
@@ -105,4 +104,3 @@ width: 100%;
   color: grey;
   text-decoration: none;
 }
-

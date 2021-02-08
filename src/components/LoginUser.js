@@ -15,7 +15,7 @@ export const LoginUser = () => {
     };
 
     const [user, setUser] = useState(initialValue);
-    const {setUserToken} = useContext(Context);
+    const {setUserToken, setUsername} = useContext(Context);
     const history = useHistory();
 
 
@@ -31,7 +31,9 @@ export const LoginUser = () => {
         .then(data => {
           if(data.success){
             setUserToken(data);
+            setUsername(user.username);
             localStorage.setItem('data', JSON.stringify(data));
+            localStorage.setItem('username', JSON.stringify(user.username));
             setUser(initialValue);
             history.push('/');
           } else {
@@ -40,9 +42,7 @@ export const LoginUser = () => {
               title: 'Error',
               text: 'There was a problem creating your account. Check that your email address is spelled correctly'
             })
-
           }});
-       
       }
     };
    

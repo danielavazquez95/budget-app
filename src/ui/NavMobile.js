@@ -5,11 +5,12 @@ import { Context } from '../context/Context';
 export const NavMobile = (props) => {
 
     const [sidebar, setSidebar] = useState(false);
-    const {userToken,setUserToken} = useContext(Context);
+    const {userToken,setUserToken, username, setUsername} = useContext(Context);
     const showSidebar = () => setSidebar(!sidebar);
 
     const handlerClick = () => {
         setUserToken({});
+        setUsername('');
         localStorage.clear();
     };
 
@@ -25,21 +26,26 @@ export const NavMobile = (props) => {
                  <li className='navbar-toggle bg-dark d-block'>
                     {
                         userToken.success ? 
+                        <>
+                        <span className="nav-text text-white mx-2 py-0">
+                        {username || JSON.parse(localStorage.getItem('username'))}
+                        </span>
                         <NavLink
                         activeClassName="active"
-                        className="menu-bars nav-text text-danger" 
+                        className="menu-bars nav-text text-danger py-0" 
                         to="#"
                         onClick={handlerClick}
                         >
                         Log out
                         </NavLink>
+                        </>
                         :
                         <>
                             <NavLink 
                             activeClassName="active"
                             className="menu-bars nav-text" 
                             exact to="/auth/register" >
-                            Sign in
+                            Sign up
                             </NavLink>
                             <NavLink 
                             activeClassName="active"

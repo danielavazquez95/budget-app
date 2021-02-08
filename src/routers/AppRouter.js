@@ -22,7 +22,6 @@ export const AppRouter = () => {
 
     return (
         
-      
         <HashRouter basename='/'>
             <div className="home-screen">
                 <NavBar />

@@ -3,7 +3,7 @@ import { deleteOperation, modifyOperation } from '../helpers/fetchOperations';
 import { Context } from '../context/Context';
 
 
-export const OperationScreen = ({operation, handleDeleteOperation, layout}) => {
+export const OperationScreen = ({operation, handleDeleteOperation, handleUpdateOperation, layout}) => {
 
     const [styleEdit, setStyleEdit] = useState(true);
     const [data, setData] = useState({
@@ -55,6 +55,7 @@ export const OperationScreen = ({operation, handleDeleteOperation, layout}) => {
                 className={`btn btn-success btn-sm ms-5 ${styleEdit && 'd-none'}`} 
                 onClick={() => {
                     modifyOperation(userToken.success, operation.id, data);
+                    handleUpdateOperation(operation.id , data);
                     setStyleEdit(!styleEdit);
                 }}
             >

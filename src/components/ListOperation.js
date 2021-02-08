@@ -1,7 +1,7 @@
 import React  from 'react';
 import { OperationScreen } from './OperationScreen';
 
-export const ListOperation = ({operationsData, handleDeleteOperation, loadingStatus}) => {
+export const ListOperation = ({operationsData, handleDeleteOperation, handleUpdateOperation, loadingStatus}) => {
 
     const operationsList = operationsData.length < 10 ? operationsData : operationsData.slice(-10);
     const entryData = operationsList.filter(operation => operation.type === 'Entry');
@@ -9,13 +9,13 @@ export const ListOperation = ({operationsData, handleDeleteOperation, loadingSta
     
     const balance = () => {
 
-        let a = 0;
-        let b = 0;
+        let entry = 0;
+        let expense = 0;
 
-        entryData.forEach(operation => a += Number(operation.price));
-        expenseData.forEach(operation => b += Number(operation.price));
-        
-        return a - b
+        entryData.forEach(operation => entry += Number(operation.price));
+        expenseData.forEach(operation => expense += Number(operation.price));
+
+        return entry - expense;
 
     };
     
@@ -25,7 +25,7 @@ export const ListOperation = ({operationsData, handleDeleteOperation, loadingSta
         } else if (balance() < 0 ){
             return false
         }
-        return 'equal'
+        return 'equal';
     };
 
 
@@ -42,13 +42,13 @@ export const ListOperation = ({operationsData, handleDeleteOperation, loadingSta
                     <div className="col">
                         <h4 className="text-center pb-2">Entry</h4>
                         { 
-                            entryData.map( operation =>  <OperationScreen key={operation.id} operation={operation} handleDeleteOperation={handleDeleteOperation} layout='alert alert-primary p-1'/>)
+                            entryData.map( operation =>  <OperationScreen key={operation.id} operation={operation} handleDeleteOperation={handleDeleteOperation}  handleUpdateOperation={handleUpdateOperation} layout='alert alert-primary p-1'/>)
                         }
                     </div>
                     <div className="col">
                         <h4 className="text-center pb-2">Expenses</h4>
                         {   
-                            expenseData.map( operation =>  <OperationScreen key={operation.id} operation={operation} handleDeleteOperation={handleDeleteOperation} layout='alert alert-danger p-1' />)
+                            expenseData.map( operation =>  <OperationScreen key={operation.id} operation={operation} handleDeleteOperation={handleDeleteOperation} handleUpdateOperation={handleUpdateOperation} layout='alert alert-danger p-1' />)
                         }
                     </div>
                 </div>

@@ -21,7 +21,7 @@ export const postOperation = (token, data) => {
 };
 
 export const deleteOperation = (token, id) => {
-    console.log('id en delete', id)
+
     fetch(`https://budget-apirest.herokuapp.com/api/operations/${id}`, {
         method: 'DELETE',
         mode: 'cors',

@@ -34,6 +34,15 @@ export const HomeScreen = () => {
         setOperationsData(operationDelete);
     };
 
+    const handleUpdateOperation = (id , editedData) => {
+       
+        const indexOperation = operationsData.findIndex(operation => operation.id === id);
+        let newOperation = [...operationsData];
+        newOperation[indexOperation] = {...newOperation[indexOperation], concept: editedData.concept, price: editedData.price , date: editedData.date };
+        setOperationsData(newOperation);
+    
+    };
+
     return (
         <>
         {
@@ -41,7 +50,7 @@ export const HomeScreen = () => {
              (<div className="container box">
                 <div className="row justify-content-center">
                     <RegisterOperationForm handleNewOperation={handleNewOperation}/>
-                    <ListOperation operationsData={operationsData} handleDeleteOperation={handleDeleteOperation} loadingStatus={loadingStatus}/>
+                    <ListOperation operationsData={operationsData} handleDeleteOperation={handleDeleteOperation} handleUpdateOperation={handleUpdateOperation} loadingStatus={loadingStatus}/>
                 </div>
             </div>)
             :

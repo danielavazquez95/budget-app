@@ -5,13 +5,14 @@ import { NavMobile } from './NavMobile';
 
 export const NavBar = (props) => {
 
-    const {userToken,setUserToken} = useContext(Context);
+    const {userToken,setUserToken, username, setUsername} = useContext(Context);
 
     const handlerClick = () => {
         setUserToken({});
+        setUsername('');
         localStorage.clear();
     };
-
+    
     return (
        
         <div> 
@@ -20,32 +21,34 @@ export const NavBar = (props) => {
                 <div className="collapse navbar-collapse justify-content-end mx-5" id="navbarNav">
                     {
                         userToken.success ? 
-
-                        <NavLink
-                        activeClassName="active"
-                        className="nav-item nav-link text-danger d-none d-md-inline" 
-                        to="#"
-                        onClick={handlerClick}
-                        >
-                        Log out
-                        </NavLink>
+                        <>
+                            <span className="text-white d-none d-md-inline"> {username || JSON.parse(localStorage.getItem('username'))}</span>
+                            <NavLink
+                            activeClassName="active"
+                            className="nav-item nav-link text-danger d-none d-md-inline" 
+                            to="#"
+                            onClick={handlerClick}
+                            >
+                            Log out
+                            </NavLink>
+                        </>
 
                         :
                         
                         <ul className="navbar-nav">
-                         <NavLink 
-                            activeClassName="active"
-                            className="nav-item nav-link d-none d-md-inline" 
-                            exact to="/auth/register" >
-                            Sign up
-                        </NavLink>
-                        <NavLink 
-                            activeClassName="active"
-                            className="nav-item nav-link d-none d-md-inline" 
-                            exact to="/auth/login" >
-                            Log in
-                        </NavLink>
-                    </ul>
+                            <NavLink 
+                                activeClassName="active"
+                                className="nav-item nav-link d-none d-md-inline" 
+                                exact to="/auth/register" >
+                                Sign up
+                            </NavLink>
+                            <NavLink 
+                                activeClassName="active"
+                                className="nav-item nav-link d-none d-md-inline" 
+                                exact to="/auth/login" >
+                                Log in
+                            </NavLink>
+                        </ul>
                     }           
                 </div>
             </nav>

@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { deleteOperation, modifyOperation } from '../helpers/fetchOperations';
 import { Context } from '../context/Context';
-
+import { deleteOperation, modifyOperation } from '../helpers/fetchOperations';
 
 export const OperationScreen = ({operation, handleDeleteOperation, handleUpdateOperation, layout}) => {
 

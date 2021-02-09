@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { isFormValid } from '../helpers/formRegisterValid';
 import { registerUser } from '../helpers/fetchOperations';
-import Swal from 'sweetalert2';
+
 
 export const RegisterUser = () => {
 

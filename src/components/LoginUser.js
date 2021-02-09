@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
 import { Context } from '../context/Context';
+import { Link, useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { formLoginValid } from '../helpers/formLoginValid';
 import {loginUser } from '../helpers/fetchOperations';
-import Swal from 'sweetalert2';
+
 
 
 export const LoginUser = () => {

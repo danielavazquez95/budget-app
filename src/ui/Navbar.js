@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { NavLink} from 'react-router-dom';
 import { Context } from '../context/Context';
+import { NavLink} from 'react-router-dom';
 import { NavMobile } from './NavMobile';
 
 export const NavBar = (props) => {

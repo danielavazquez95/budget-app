@@ -5,11 +5,11 @@ import {
     Route,
     Redirect
   } from "react-router-dom";
-import { NavBar } from '../ui/Navbar';
-import { AuthRouter } from './AuthRouter';
-import { HomeScreen } from '../components/HomeScreen';
-import { Footer } from '../ui/Footer';
 import { Context } from '../context/Context';
+import { AuthRouter } from './AuthRouter';
+import { Footer } from '../ui/Footer';
+import { HomeScreen } from '../components/HomeScreen';
+import { NavBar } from '../ui/Navbar';
 import '../css/index.css';
 
 export const AppRouter = () => {

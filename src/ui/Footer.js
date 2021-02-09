@@ -17,10 +17,10 @@ export const Footer = () => {
                     </div>
                     <div className="row">
                         <div className="col text-center">
-                            <a className="nav-item nav-link d-inline text-white" href="https://github.com/danielavazquez95" target="_blank">
+                            <a className="nav-item nav-link d-inline text-white" href="https://github.com/danielavazquez95" target="_blank" rel="noreferrer" >
                                 <i className="fab fa-github" />
                             </a>
-                            <a className="nav-item nav-link d-inline text-white" href="mailto:danielavazquez95@gmail.com" target="_blank">
+                            <a className="nav-item nav-link d-inline text-white" href="mailto:danielavazquez95@gmail.com" target="_blank" rel="noreferrer" >
                                 <i className="far fa-envelope"/>
                             </a>
                         </div>  
